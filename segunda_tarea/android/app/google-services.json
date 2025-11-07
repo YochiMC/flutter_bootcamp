@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "795149237250",
+    "project_id": "aranias-mexico-app",
+    "storage_bucket": "aranias-mexico-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:795149237250:android:609f69a584d7168c9fbb1b",
+        "android_client_info": {
+          "package_name": "com.example.segunda_tarea"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6ex5PyzbE1pF1O4EKvqr9KbiLhYK1Uiw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
