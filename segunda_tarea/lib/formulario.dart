@@ -57,11 +57,19 @@ class _FormularioCuentaState extends State<FormularioCuenta> {
               TextFormField(
                 controller: _nombreController,
                 decoration: const InputDecoration(
-                  labelText: 'Nombre: ',
-                  hintText: 'nombre (s)',
+                  labelText: 'Nombre de usuario: ',
+                  hintText: 'username',
                 ),
                 validator:
-                    (value) => value!.isEmpty ? 'Ingrese su nombre' : null,
+                    (value){
+                      if(value == null || value.isEmpty){
+                        return 'Ingresa tu nombre de usuario';
+                      }
+                      if(value.length < 8 || value.length > 12 ){
+                        return 'El username debe de contener de 8 a 12 caracteres';
+                      }
+                      return null;
+                    }
               ),
               TextFormField(
                 keyboardType: TextInputType.number,
@@ -78,21 +86,29 @@ class _FormularioCuentaState extends State<FormularioCuenta> {
                   if(edad == null){
                     return 'La edad debe de ser un número';
                   }
-                  if(edad < 18 || edad >60){
+                  if(edad < 18 || edad > 60){
                     return 'La edad debe de estar entre 18 y 60';
                   }
                   return null;
                 },
               ),
               TextFormField(
+                keyboardType: TextInputType.number,
                 controller: _telefonoController,
                 decoration: const InputDecoration(
                   labelText: 'Telefono Celular: ',
                   hintText: 'xxxxxxxxxxx',
                 ),
                 validator:
-                    (value) =>
-                        value!.isEmpty ? 'Ingrese su número de telefono' : null,
+                    (value) {
+                      if(value == null || value.isEmpty){
+                        return 'Ingrese su número de telefono';
+                      }
+                      if(value.length < 10 || value.length > 11){
+                        return 'El número debe de contener 10 digitos';
+                      }
+                      return null;
+                    },
               ),
               TextFormField(
                 controller: _correoElectronicoController,
@@ -101,8 +117,15 @@ class _FormularioCuentaState extends State<FormularioCuenta> {
                   hintText: 'example@domain.com',
                 ),
                 validator:
-                    (value) =>
-                        value!.isEmpty ? 'Ingrese su correo electrónico' : null,
+                    (value){
+                      if(value == null || value.isEmpty){
+                        return 'Ingrese su correo electronico';
+                      }
+                      if(!value.contains('@') || !value.contains('.')){
+                        return 'Este correo no es válido';
+                      }
+                      return null;
+                    }
               ),
               TextFormField(
                 obscureText: _isOscured,
@@ -124,7 +147,15 @@ class _FormularioCuentaState extends State<FormularioCuenta> {
                   hintText: 'password',
                 ),
                 validator:
-                    (value) => value!.isEmpty ? 'Ingrese su contraseña' : null,
+                    (value) {
+                      if(value == null || value.isEmpty){
+                        return 'Ingrese su contraseña';
+                      }
+                      if(value.length < 8 || value.length > 16){
+                        return 'La contraseña debe de tener entre 8 y 16 caracteres';
+                      }
+                      return null;
+                    },
               ),
               const SizedBox(height: 20),
               ElevatedButton(
