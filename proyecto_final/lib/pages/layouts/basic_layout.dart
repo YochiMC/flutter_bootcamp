@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import '../components/app_barcito.dart';
+import '../components/nav_drawer.dart';
 import '../../assets/theme.dart';
 
 const String userType = 'admin';
-final Map<String, Color> theme= getTheme(userType);
-
 class BasicLayout extends StatefulWidget {
   final String title;
   final Widget? child;
@@ -19,15 +18,16 @@ class _BasicLayoutState extends State<BasicLayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarcito(title: widget.title, userType: getUserType(), color: theme['alternative']),
+      appBar: AppBarcito(title: widget.title,),
+      drawer: MenuLateral(),
       body:
           widget.child ??
           Center(child: Text('Hubo un error, lamento los incovenientes :c')),
-          backgroundColor: theme['primary'],
+          backgroundColor: primaryColorUser,
     );
   }
 }
 
 String getUserType() {
   return userType;
-}
+} 
