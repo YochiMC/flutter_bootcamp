@@ -22,7 +22,7 @@ const primaryColorFont = Colors.black;
 const secondaryColorFont = Colors.white;
 
 //Estilos de la fuente misma
-const titulo = TextStyle(fontSize: 30);
+const titulo = TextStyle(fontSize: 30, );
 const titulo1 = TextStyle(fontSize: 25);
 const titulo2 = TextStyle(fontSize: 20);
 

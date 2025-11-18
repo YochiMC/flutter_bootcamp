@@ -30,8 +30,11 @@ class _HomeState extends State<Home> {
                 height: 100,
                 child: Text(
                   'De seguro te estarás preguntando porque existe este pequeño micrositio, ' +
-                     'el origen de esta página se debe principalmente ',
-                  style: normal,
+                     'el origen de esta página se debe principalmente a la desinformación que hay ' +
+                     'acerca de las arañas y otros insectos de los cuales hay que tener ciertas ' +
+                     'precauciones.',
+                  textAlign: TextAlign.center,
+                  style: normal, 
                 ),
               ),
               Container(width: 100, height: 100),
