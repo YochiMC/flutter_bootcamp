@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'drawer_element.dart';
-import '../../assets/theme.dart';
 import '../home.dart';
 import '../views/user/aranias.dart';
+import '../../assets/theme.dart';
 
 class MenuLateral extends StatefulWidget {
   const MenuLateral({super.key});

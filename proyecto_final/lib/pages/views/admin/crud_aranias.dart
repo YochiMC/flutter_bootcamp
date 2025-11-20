@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import '../../layouts/basic_layout.dart';
 import '../../components/insect_card.dart';
 
-class Aranias extends StatefulWidget {
-  const Aranias({super.key});
+class Dashboard extends StatefulWidget {
+  const Dashboard({super.key});
 
   @override
-  State<Aranias> createState() => _AraniasState();
+  State<Dashboard> createState() => _DashboardState();
 }
 
-class _AraniasState extends State<Aranias> {
+class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return BasicLayout(

@@ -1,0 +1,25 @@
+{
+    "flutter": {
+        "platforms": {
+            "android": {
+                "default": {
+                    "projectId": "aranias-mexico-app-eb6be",
+                    "appId": "1:1025008332482:android:9aa8a4d7535968db10155b",
+                    "fileOutput": "android/app/google-services.json"
+                }
+            },
+            "dart": {
+                "lib/firebase_options.dart": {
+                    "projectId": "aranias-mexico-app-eb6be",
+                    "configurations": {
+                        "android": "1:1025008332482:android:9aa8a4d7535968db10155b",
+                        "ios": "1:1025008332482:ios:09d69ea745b6b84710155b",
+                        "macos": "1:1025008332482:ios:09d69ea745b6b84710155b",
+                        "web": "1:1025008332482:web:510e582bc942b7b510155b",
+                        "windows": "1:1025008332482:web:01d4383d6d8fe4fe10155b"
+                    }
+                }
+            }
+        }
+    }
+}

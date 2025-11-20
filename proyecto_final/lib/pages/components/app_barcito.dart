@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import '../views/auth/login.dart';
 import '../../assets/theme.dart';
-
-const isLogged = false;
+import '../../services/auth_service.dart';
+import '../home.dart';
 
 class AppBarcito extends StatefulWidget implements PreferredSizeWidget {
   final String title;
@@ -19,15 +21,16 @@ class AppBarcito extends StatefulWidget implements PreferredSizeWidget {
 
 class _AppBarcitoState extends State<AppBarcito> {
   @override
+  final user = FirebaseAuth.instance.currentUser;
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text(widget.title, style: TextStyle(color: secondaryColorFont), ),
+      title: Text(widget.title, style: TextStyle(color: secondaryColorFont)),
       centerTitle: true,
-      actions: getActions(isLogged),
+      actions: getActions(user, context),
       backgroundColor: firstDarkColorUser,
       leading: IconButton(
         icon: Icon(Icons.menu, color: secondaryColorFont),
-        onPressed: (){
+        onPressed: () {
           Scaffold.of(context).openDrawer();
         },
       ),
@@ -35,16 +38,37 @@ class _AppBarcitoState extends State<AppBarcito> {
   }
 }
 
-List<Widget> getActions(bool isLogged){
-  if(isLogged){
-    return[
-        IconButton(icon: Icon(Icons.settings), color: secondaryColorFont, onPressed: () => {print('configuraciones')}),
-        IconButton(icon: Icon(Icons.person), onPressed: () => {print('perfil')}),
-        IconButton(icon: Icon(Icons.logout), onPressed: () => {print('cerrar sesion')})
-    ];
-  }else{
+List<Widget> getActions(User? user, BuildContext context) {
+  if (user != null) {
     return [
-      IconButton(icon: Icon(Icons.login), color: secondaryColorFont, onPressed: () => {print('iniciar sesion')}),
+      IconButton(
+        icon: Icon(Icons.settings),
+        color: secondaryColorFont,
+        onPressed: () => {print('configuraciones')},
+      ),
+      IconButton(icon: Icon(Icons.person), onPressed: () => {print('perfil')}),
+      IconButton(
+        icon: Icon(Icons.logout),
+        onPressed: () async {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => Home()),
+          );
+        },
+      ),
     ];
-  } 
+  } else {
+    return [
+      IconButton(
+        icon: Icon(Icons.login),
+        color: secondaryColorFont,
+        onPressed: () => {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => Login()),
+          ),
+        },
+      ),
+    ];
+  }
 }
