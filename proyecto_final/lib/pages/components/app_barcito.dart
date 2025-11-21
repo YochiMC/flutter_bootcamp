@@ -46,14 +46,20 @@ List<Widget> getActions(User? user, BuildContext context) {
         color: secondaryColorFont,
         onPressed: () => {print('configuraciones')},
       ),
-      IconButton(icon: Icon(Icons.person), onPressed: () => {print('perfil')}),
+      IconButton(
+        icon: Icon(Icons.person),
+        color: secondaryColorFont,
+        onPressed: () => {print('perfil')},
+      ),
       IconButton(
         icon: Icon(Icons.logout),
+        color: secondaryColorFont,
         onPressed: () async {
-          Navigator.pushReplacement(
+          print('entra');
+          AuthService().signOut();
+          Navigator.of(
             context,
-            MaterialPageRoute(builder: (context) => Home()),
-          );
+          ).pushReplacement(MaterialPageRoute(builder: (context) => Home()));
         },
       ),
     ];
