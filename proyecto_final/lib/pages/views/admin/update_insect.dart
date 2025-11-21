@@ -22,6 +22,7 @@ class _UpdateInsectState extends State<UpdateInsect> {
   final TextEditingController _descripcionController = TextEditingController();
   final TextEditingController _urlImagenController = TextEditingController();
   bool _im = false;
+  bool _isDataInitialized = false;
 
   Future<void> _sendForm(String id) async {
     if (_formKey.currentState!.validate()) {
@@ -58,9 +59,13 @@ class _UpdateInsectState extends State<UpdateInsect> {
                 if (snapshot.hasData && snapshot.data!.exists) {
                   final Map<String, dynamic> data =
                       snapshot.data!.data()! as Map<String, dynamic>;
-                  _nombreController.text = data['nombre'] ?? '';
-                  _descripcionController.text = data['descripcion'] ?? '';
-                  _urlImagenController.text = data['url_img'] ?? '';
+                  if (!_isDataInitialized) {
+                    _nombreController.text = data['nombre'] ?? '';
+                    _descripcionController.text = data['descripcion'] ?? '';
+                    _urlImagenController.text = data['url_img'] ?? '';
+                    _im = data['im'];
+                    _isDataInitialized = true;
+                  }
 
                   return Padding(
                     padding: const EdgeInsets.all(16.0),
@@ -100,7 +105,7 @@ class _UpdateInsectState extends State<UpdateInsect> {
                           ),
                           SwitchListTile(
                             title: Text('Importancia médica: '),
-                            value: data['im'],
+                            value: _im,
                             onChanged: (value) {
                               setState(() {
                                 _im = value;

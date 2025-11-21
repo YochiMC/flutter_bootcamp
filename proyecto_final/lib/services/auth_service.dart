@@ -39,7 +39,7 @@ class AuthService {
       await _auth.signOut();
       print('sesión cerrada correctamente');
     } catch (e) {
-      print(e);
+      print('Errorcito');
     }
   }
 }

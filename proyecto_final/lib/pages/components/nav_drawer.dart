@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'drawer_element.dart';
 import '../home.dart';
 import '../views/user/aranias.dart';
+import '../views/user/about_us.dart';
 import '../views/admin/crud_aranias.dart';
 import '../views/admin/add_insect.dart';
 import '../../assets/theme.dart';
@@ -34,7 +35,7 @@ List<Widget> drawersSelection(User? user) {
       DrawerElement(
         icon: Icon(Icons.question_answer),
         title: 'Acerca de nosotros',
-        page: Home(),
+        page: AboutUs(),
       ),
     ];
   } else {
@@ -44,7 +45,7 @@ List<Widget> drawersSelection(User? user) {
       DrawerElement(
         icon: Icon(Icons.question_answer),
         title: 'Acerca de nosotros',
-        page: Home(),
+        page: AboutUs(),
       ),
     ];
   }

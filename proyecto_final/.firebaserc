@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "aranias-mexico-app-eb6be"
+  },
+  "targets": {
+    "aranias-mexico-app-eb6be": {
+      "hosting": {
+        "aranias-mexico-app-eb6be": [
+          "aranias-mexico-app-eb6be"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

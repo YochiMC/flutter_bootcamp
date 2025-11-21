@@ -13,8 +13,8 @@ const alternativeColorUser = Color.fromRGBO(180, 190, 201, 1);
 const firstDarkColorUser = Color.fromRGBO(0, 35, 51, 1);
 const secondDarkColorUser = Color.fromRGBO(21, 154, 156, 1);
 
-const alertColor = Color.fromRGBO(223, 25, 25, 1);
-const adversimentColor = Color.fromRGBO(255, 193, 7, 1);
+const alertColor = Color.fromRGBO(65, 2, 2, 1);
+const adversimentColor = Color.fromRGBO(130, 98, 2, 1);
 const susccessColor = Color.fromRGBO(8, 204, 52, 1);
 
 //Colores para fuentes
@@ -22,9 +22,13 @@ const primaryColorFont = Colors.black;
 const secondaryColorFont = Colors.white;
 
 //Estilos de la fuente misma
-const titulo = TextStyle(fontSize: 30, );
-const titulo1 = TextStyle(fontSize: 25);
-const titulo2 = TextStyle(fontSize: 20);
+const titulo = TextStyle(fontSize: 30, color: primaryColorFont);
+const tituloAlt = TextStyle(fontSize: 30, color: secondaryColorFont);
+const titulo1 = TextStyle(fontSize: 25, color: primaryColorFont);
+const titulo1Alt = TextStyle(fontSize: 25, color: secondaryColorFont);
+const titulo2 = TextStyle(fontSize: 20, color:primaryColorFont);
+const titulo2Alt = TextStyle(fontSize: 20, color:secondaryColorFont);
 
-const normal = TextStyle(fontSize: 15);
+const normal = TextStyle(fontSize: 15, color: primaryColorFont);
+const normalAlt = TextStyle(fontSize: 15, color: secondaryColorFont);
 

@@ -43,11 +43,20 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: firstDarkColorUser,
       body: Center(
         child: Column(
+          spacing: 25,
           children: <Widget>[
-            Text('Inicio de sesión (solo para administradores)', style: titulo),
-            FilledButton(
+            Padding(padding: EdgeInsetsGeometry.only(top: 50)),
+            Text('Inicia sesión para colaborar c:', style: tituloAlt, ),
+            FilledButton.icon(
+              icon: Icon(Icons.email),
+              label: Text('Iniciar sesión con Google', style: normal),
+              style: FilledButton.styleFrom(
+                backgroundColor: primaryColorUser,
+                foregroundColor: primaryColorFont,
+              ),
               onPressed: () async {
                 final user = await AuthService().signInWithGoogle();
                 if (user != null) {
@@ -56,7 +65,6 @@ class _LoginState extends State<Login> {
                   );
                 }
               },
-              child: Text('Iniciar sesión con Google', style: normal),
             ),
           ],
         ),

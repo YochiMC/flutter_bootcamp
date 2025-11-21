@@ -42,16 +42,6 @@ List<Widget> getActions(User? user, BuildContext context) {
   if (user != null) {
     return [
       IconButton(
-        icon: Icon(Icons.settings),
-        color: secondaryColorFont,
-        onPressed: () => {print('configuraciones')},
-      ),
-      IconButton(
-        icon: Icon(Icons.person),
-        color: secondaryColorFont,
-        onPressed: () => {print('perfil')},
-      ),
-      IconButton(
         icon: Icon(Icons.logout),
         color: secondaryColorFont,
         onPressed: () async {

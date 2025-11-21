@@ -35,8 +35,8 @@ class _AraniasState extends State<Aranias> {
               padding: EdgeInsets.all(20),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3,
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
+                crossAxisSpacing: 25,
+                mainAxisSpacing: 15,
                 childAspectRatio: 0.8,
               ),
               itemCount: aranias.length,
@@ -44,6 +44,7 @@ class _AraniasState extends State<Aranias> {
                 final arania = aranias[index];
                 return InsectCard(
                   id: arania.id,
+                  im: arania['im'],
                   imageUrl: arania['url_img'].toString(),
                   spiderName: arania['nombre'].toString(),
                   spiderDescription: arania['descripcion'].toString(),
